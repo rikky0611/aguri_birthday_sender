@@ -1,0 +1,6 @@
+framework module Pods_Aguri_Birthday_SenderUITests {
+  umbrella header "Pods-Aguri_Birthday_SenderUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

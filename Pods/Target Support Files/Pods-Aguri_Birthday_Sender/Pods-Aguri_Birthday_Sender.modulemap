@@ -1,0 +1,6 @@
+framework module Pods_Aguri_Birthday_Sender {
+  umbrella header "Pods-Aguri_Birthday_Sender-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -13,15 +13,6 @@ class ViewController: UIViewController {
 
     let rootRef = FIRDatabase.database().reference()
     var dict: [Int: Bool]!
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
-    @IBOutlet var button4: UIButton!
-    @IBOutlet var button5: UIButton!
-    @IBOutlet var button6: UIButton!
-    @IBOutlet var button7: UIButton!
-    @IBOutlet var button8: UIButton!
-    @IBOutlet var button9: UIButton!
     
     @IBOutlet private var buttons: [UIButton]! {
         
@@ -34,6 +25,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         for i in 1 ... 9 {
             
@@ -44,6 +36,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func tap(sender: UIButton) {
+        
         let index: Int = sender.tag
         dict[index] = !dict[index]!
         changeColor(button: buttons[index])
@@ -52,17 +45,21 @@ class ViewController: UIViewController {
     
     
     private func changeColor(button: UIButton) {
+        
         if button.backgroundColor == UIColor.blue {
+            
             button.backgroundColor = UIColor.red
             return
         }
         if button.backgroundColor == UIColor.red {
+            
             button.backgroundColor = UIColor.blue
             return
         }
     }
     
     private func update() {
+        
         let post = dict as [Int:Bool]
         rootRef.child("test").setValue(post)
         print("更新完了\(post)")
